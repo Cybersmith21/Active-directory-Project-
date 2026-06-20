@@ -28,11 +28,21 @@
 ## Screenshots/Lab In Action 
 * Network Diagram : My full lab layout showing all four VMs on the 192.168.10.0/24 NAT network with their assigned static IP addresses
   
-* Domain Join : Windows 10 successfully joined to MYDFIR.LOCAL, now part of the Active Directory domain
+![Active Directory Lab Network Diagram](images/lab%20diahgram.png) 
+* Domain Join : Windows 10 successfully joined to MYDFIR.LOCAL, now part of the Active Directory domain. I had to do alot of troubleshooting for this part of the lab, I didnt know why it was refusing to remote connect. eventually I had to use Adming powershell and command line the users into my Target machine.
+![Windows 10 Joined to MYDFIR.LOCAL Domain](images/connected%20the%20accounts%20to%20my%20target%20pc%20.png)
 * Crowbar Attack in Progress : Kali Linux executing a password brute-force attack against the Windows 10 machine
+![Brute Force Attack from Kali Linux](images/using%20brute%20force%20attack%20into%20domain.png)
+
 * Splunk Detection : Searching Splunk and finding Event 4625 (failed logins) and 4624 (successful login) patterns showing the attack was caught
-* Atomic Red Team Execution : Running the T1136.001 test to create a local user and seeing it detected in Splunk
-* PowerShell Attack Detection : Running T1059.001 and correlating the PowerShell logs in Splunk
+![Splunk Detection Results - Event 4625 and 4624](images/userrs%20success%20codes%204000.png)
+  
+* Atomic Red Team Startup : Running the T1136.001 on powershell
+  ![Running Atomic Red Team T1136.001](images/me%20running%20t1136.001.png) 
+  
+* PowerShell Attack Detection : Running T1059.001 and correlating the PowerShell logs in Splunk i drew a arrow and line to show the exact location.
+ 
+  ![Atomic Red Team PowerShell Attack Simulation](images/t59%20getting%20through.png)
 
 ## Security & Compliance
 * Caution: This lab is strictly for educational use in an isolated virtual environment. Do not replicate this setup on production networks. The Atomic Red Team tests and brute-force attacks are real threat simulations; only run them against systems you own or have explicit permission to test.
